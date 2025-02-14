@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPIS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column; /* Alinea los elementos en columna */
+            background-image: url('imagenes/fondo3.jpg'); /* Ruta de la imagen de fondo (con barra normal) */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* La imagen no se mueve con el scroll */
+        }
+        .main-container {
+            width: 80%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            z-index: 1; /* Asegura que los elementos queden encima de la imagen */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente para que se vea la imagen */
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: darkblue;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+            color: white; /* Color blanco para el título */
+            margin-bottom: 40px;
+            z-index: 1; /* Asegura que el título quede encima de la imagen */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4); /* Efecto de brillo */
+        }
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            if (!sessionStorage.getItem("loggedIn")) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="title">INFORMES DE KPIS</div> <!-- Título grande con brillo -->
+    <div class="main-container">
+        <div class="container">
+            <h2>EVOLUTIVOS COMPARTAMOS</h2>
+            <a class="btn" href="https://app.powerbi.com/view?r=eyJrIjoiYTM4NTk5YjYtODNkOS00ODFkLThlNjItNjc0ODA1NjhjMzk2IiwidCI6ImRlZjljNjc0LTY0ZTctNDhiOS1hZTQxLTc2MDM3NGViZTVmYiIsImMiOjR9">Ver Presentación</a>
+        </div>
+        <div class="container">
+            <h2>Presentación 2</h2>
+            <a class="btn" href="https://app.powerbi.com/presentacion2" target="_blank">Ver Presentación</a>
+        </div>
+        <div class="container">
+            <h2>Presentación 3</h2>
+            <a class="btn" href="https://app.powerbi.com/presentacion3" target="_blank">Ver Presentación</a>
+        </div>
+        <div class="container">
+            <h2>Presentación 4</h2>
+            <a class="btn" href="https://app.powerbi.com/presentacion4" target="_blank">Ver Presentación</a>
+        </div>
+        <div class="container">
+            <h2>Presentación 5</h2>
+            <a class="btn" href="https://app.powerbi.com/presentacion5" target="_blank">Ver Presentación</a>
+        </div>
+        <div class="container">
+            <h2>Presentación 6</h2>
+            <a class="btn" href="https://app.powerbi.com/presentacion6" target="_blank">Ver Presentación</a>
+        </div>
+    </div>
+</body>
+</html>

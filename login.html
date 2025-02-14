@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('imagenes/fondo_logeo.jpg'); /* Ruta correcta de la imagen */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen en la pantalla */
+            filter: brightness(0.8); /* Aplica un brillo menor a la imagen */
+            transition: filter 0.3s ease; /* Transición suave al cambiar el brillo */
+        }
+
+        /* Efecto de brillo al pasar el ratón sobre la imagen */
+        body:hover {
+            filter: brightness(1.2); /* Aumenta el brillo al pasar el mouse */
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para que se vea la imagen */
+            padding: 40px; /* Aumentamos el padding */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+            border-radius: 10px; /* Bordes más redondeados */
+            text-align: center;
+            width: 350px; /* Ancho fijo mayor */
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin: 15px 0; /* Espaciado más grande */
+            padding: 15px; /* Mayor padding en los inputs */
+            font-size: 16px; /* Texto más grande */
+            border: 1px solid #ccc;
+            border-radius: 5px; /* Bordes redondeados en los inputs */
+        }
+
+        button {
+            width: 100%;
+            padding: 15px; /* Mayor padding */
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px; /* Texto más grande */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        button:hover {
+            background: darkblue; /* Cambiar color al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Entrar</button>
+        <p id="message" style="color: red;"></p>
+    </div>
+    
+    <script>
+        function login() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            if (user === "solida" && pass === "cobranza") {
+                sessionStorage.setItem("loggedIn", "true");
+                window.location.href = "presentaciones.html";
+            } else {
+                document.getElementById("message").textContent = "Usuario o contraseña incorrectos";
+            }
+        }
+    </script>
+</body>
+</html>
